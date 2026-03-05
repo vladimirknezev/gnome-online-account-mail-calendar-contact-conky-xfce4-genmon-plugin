@@ -83,8 +83,8 @@ def fetch_via_caldav(user, token):
                 d = start[6:8]
                 m_index = int(start[4:6])
                 m = meseci[m_index]
-                time = f"[{start[9:11]}:{start[11:13]}] " if "T" in start else ""
-                print(f"{d}. {m}  —  {time}{clean_title}")
+                time_str = f"[{start[9:11]}:{start[11:13]}] " if "T" in start else ""
+                print(f"{d}. {m}  —  {time_str}{clean_title}")
             except: continue
             
     except: pass
