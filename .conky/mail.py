@@ -2,7 +2,7 @@ import subprocess
 import imaplib
 import email
 import dbus
-import socket  # DODATO: Za kontrolu mrežnog vremena
+import socket  
 from email.header import decode_header
 from email.utils import parsedate_to_datetime
 
