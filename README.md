@@ -14,7 +14,7 @@
 ## 📁 Scripts
 1.  **`mail.py`**: Fetches the latest unread emails from your connected Gmail or Outlook accounts.
 2.  **`email-to-password.py`**: (Alternative) Uses IMAP login with App Passwords. Use this for Yahoo, AOL, or providers that don't support GOA tokens.
-3.  **`calendar.py`**: Retrieves upcoming events from your synchronized Google or Microsoft calendars.
+3.  **`calendar.py`**: Retrieves upcoming events from your synchronized Google calendar.
 
 ---
 
