@@ -64,6 +64,7 @@ You must allow the system to run these scripts as programs. Open your terminal a
 
 ```bash
 chmod +x ~/.conky/mail.py
+chmod +x ~/.conky/email-to-password.py
 chmod +x ~/.conky/calendar.py
 ```
 4️⃣ Activation
