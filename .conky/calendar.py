@@ -37,7 +37,7 @@ def fetch_via_caldav(user, token):
     url = f"https://apidata.googleusercontent.com/caldav/v2/{user}/events"
     now = datetime.datetime.now(datetime.timezone.utc)
     start_str = now.strftime("%Y%m%dT000000Z")
-    end_str = (now + datetime.timedelta(days=7)).strftime("%Y%m%dT235959Z")
+    end_str = (now + datetime.timedelta(days=14)).strftime("%Y%m%dT235959Z")
 
     xml_query = f"""
     <C:calendar-query xmlns:D="DAV:" xmlns:C="urn:ietf:params:xml:ns:caldav">
@@ -52,16 +52,15 @@ def fetch_via_caldav(user, token):
     </C:calendar-query>
     """
 
-    # Added --max-time 10 to curl (crucial for calendar stability)
+    # Using curl to fetch calendar data
     cmd = ["curl", "-s", "--max-time", "10", "-X", "REPORT", url, 
            "-H", f"Authorization: Bearer {token}",
            "-H", "Content-Type: application/xml", "--data", xml_query]
 
     try:
-        # Added timeout=12 at subprocess level as double protection
         response = subprocess.check_output(cmd, text=True, timeout=12)
         if not response or "<D:error" in response:
-            # Fallback to "primary" calendar
+            # Fallback to "primary" calendar if the specific user URL fails
             cmd[4] = "https://apidata.googleusercontent.com/caldav/v2/primary/events"
             response = subprocess.check_output(cmd, text=True, timeout=12)
 
@@ -71,7 +70,8 @@ def fetch_via_caldav(user, token):
         if not titles: return
 
         events = sorted(zip(starts, titles))
-        months = ["", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+        # Short month names for better Conky fit
+        months = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
         
         seen = set()
         for start, title in events:
@@ -80,11 +80,15 @@ def fetch_via_caldav(user, token):
             seen.add(clean_title)
 
             try:
-                d = start[6:8]
-                m_index = int(start[4:6])
-                m = meseci[m_index]
+                day = start[6:8]
+                month_index = int(start[4:6])
+                month = months[month_index]
+                
+                # Show time only if it's not an all-day event
                 time_str = f"[{start[9:11]}:{start[11:13]}] " if "T" in start else ""
-                print(f"{d}. {m}  —  {time_str}{clean_title}")
+                
+                # Clean minimalist output
+                print(f"{day} {month} — {time_str}{clean_title}")
             except: continue
             
     except: pass
