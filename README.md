@@ -17,3 +17,28 @@ This repository contains Python scripts designed to fetch data from **GNOME Onli
 Make sure you have the following packages installed (example for Ubuntu/Debian):
 ```bash
 sudo apt install python3-dbus python3-gi gir1.2-edataserver-1.2 libsecret-tools gnome-online-accounts-gtk
+Setup Instructions
+Follow these steps to get the scripts running on your system:
+
+1. GNOME Online Accounts (GOA) Login
+Open your system Settings and navigate to Online Accounts.
+
+Log in to your Google or Microsoft accounts. The scripts will automatically detect these authenticated sessions.
+
+2. Folder Configuration
+Create a folder named .conky in your Home directory (if it doesn't already exist).
+
+Copy mail.py and calendar.py into the ~/.conky/ folder.
+
+3. Grant Execution Permissions
+You must allow the system to run these scripts as programs. Open your terminal and run:
+
+Bash
+chmod +x ~/.conky/mail.py
+chmod +x ~/.conky/calendar.py
+4. Activate via Conky Manager
+Open Conky Manager on your Linux distribution.
+
+Refresh the list of widgets and scripts.
+
+Select (check the box) for the scripts to display them on your desktop.
