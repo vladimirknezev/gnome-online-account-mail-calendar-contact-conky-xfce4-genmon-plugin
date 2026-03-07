@@ -88,3 +88,6 @@ Display of upcoming religious, national holidays, and personal reminders.
 ---
 ## ⚖️ License
 This project is licensed under the MIT License - see the LICENSE file for details.
+
+## ⚠️ Disclaimer
+This project is intended for personal use only. The scripts access accounts that are already logged in via GNOME Online Accounts on your own system. The author is not responsible for any misuse of the code, including attempts to gain unauthorized access to other people's accounts or data. Use at your own risk.
