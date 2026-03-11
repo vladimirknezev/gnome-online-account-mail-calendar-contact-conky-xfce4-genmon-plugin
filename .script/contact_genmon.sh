@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Path to your translated Python script
-PYTHON_SCRIPT="$HOME/.script/contacts.py"
+PYTHON_SCRIPT="$HOME/.script/contact.py"
 
 # Modern SEARCH icon for that cockpit look
 ICON="/usr/share/icons/Papirus/24x24/apps/system-search.svg"
