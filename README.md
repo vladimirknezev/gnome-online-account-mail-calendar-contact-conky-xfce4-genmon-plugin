@@ -121,6 +121,40 @@ Right-click the new icon -> Properties.
 ```bash
 bash -c "~/.script/contact_genmon.sh"
 ```
+Gemini је рекао
+Текст је био скоро добар, али сам га мало „затегао” да буде прецизнији и да код буде потпуно јасан (са затвореним наводницима које смо раније помињали). Такође, додао сам део за Reverse Lookup јер је то прејака опција да би остала неспоменута.
+
+Ево поправљене верзије за твој GitHub:
+
+## 🚀 Pro-Tip: Whisker Menu Integration (Keyboard Search)
+If you prefer using your keyboard, you can integrate the contact search directly into the XFCE Whisker Menu. This allows you to find and copy contact info in seconds without touching the mouse.
+
+### 🛠️ Setup:
+Right-click Whisker Menu -> Properties -> Search Actions.
+
+Click the + (Add) button and enter the following:
+
+Name: Search Contacts
+
+Pattern: !c
+
+```bash
+bash -c 'RESULT=$(python3 ~/.script/contact.py "%u" | zenity --list --title="CONTACT SEARCH" --column="CONTACT | PHONE" --width=500 --height=600); if [ ! -z "$RESULT" ]; then echo -n "$RESULT" | xclip -selection clipboard; notify-send "Cockpit" "Copied: $RESULT" --icon=edit-copy; fi'
+```
+
+💡 How to use:
+Open your menu (Super key), type !c followed by a Name or Phone Number (e.g., !c vladimir or !c 61*** or !c +38161***) and press Enter.
+
+Select the contact from the list and click OK.
+
+Result: The string NAME | PHONE is now in your clipboard and ready to be pasted!
+
+🔍 Reverse Lookup Support:
+Thanks to the optimized SQL query, you can search by:
+
+Name: Typing a part of the contact's name.
+
+Number: Typing a part of the phone number (Reverse Search).
 Label: Uncheck (Hidden).
 * **Period (s):** `3600` (Or set to `0` to trigger ONLY on manual click, preventing unexpected pop-ups).
 ## ⚖️ License
