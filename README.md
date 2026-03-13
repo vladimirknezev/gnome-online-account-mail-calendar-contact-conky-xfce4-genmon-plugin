@@ -77,7 +77,7 @@ Display of upcoming religious, national holidays, and personal reminders.
 
 ---
 
-## 🛠️ NEW: XFCE Desktop Integration (The Cockpit Module)
+## 🛠️ NEW: XFCE Desktop Integration (The Cockpit Module)(X11)
 
 This is a standalone interactive module designed specifically for **XFCE Desktop** users. It allows you to search contacts and monitor mail directly from your system panel using the `Genmon` plugin.
 
@@ -90,7 +90,7 @@ To use the Cockpit Module, run:
 ```bash
 sudo apt install -y python3 sqlite3 zenity xclip libnotify-bin gnome-online-accounts-gtk evolution-data-server
 ```
-## 📖 Setup Instructions Contact XFCE (X11)
+## 📖 Setup Instructions Contact
 1️⃣ GNOME Online Accounts (GOA) Login
 Open your system Settings and navigate to Online Accounts.
 Log in to your Google. The scripts will automatically detect these sessions.
