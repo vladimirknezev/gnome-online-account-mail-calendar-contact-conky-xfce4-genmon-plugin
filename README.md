@@ -1,5 +1,5 @@
-# 🚀 gnome-online-account-mail-calendar-contact-conky-xfce4-genmon-plugin
-
+# 🚀 XFCE Info Deck
+A high-speed productivity bridge for GNOME Online Accounts, Conky, and Genmon.
 A Python-based productivity suite for Linux. Monitor mail and calendar via Conky, and interact with your Google Contacts directly from the XFCE panel—all protected by built-in "anti-zombie" timeout logic.
 
 ---
@@ -21,27 +21,20 @@ A Python-based productivity suite for Linux. Monitor mail and calendar via Conky
 
 ## 🔑 Special Note for Yahoo/AOL Users (Added to Setup)
 If you see an "Authentication Failed" or "Token Error" message for your account:
-
 Use the email-to-password.py script.
-
 Go to your provider's Account Security settings.
-
 Select "Generate App Password".
-
 Copy the 16-character code and paste it into the PASSWORD field in the script.
 
 ## 🛡️ Why it's Legal and Secure
 Official Protocols: The scripts use standard IMAP and DBus interfaces provided by the OS and email providers.
-
 Local Processing: Your credentials and emails never leave your computer; they are sent directly to the email server via SSL.
-
 No Main Password: Using App Passwords ensures your primary account password remains private.
 
 ---
 
 ## 🛠️ Requirements
 Make sure you have the following packages installed (example for Ubuntu/Debian):
-
 ```bash
 sudo apt install -y python3-dbus python3-gi gir1.2-edataserver-1.2 libsecret-tools gnome-online-accounts-gtk
 ```
@@ -52,17 +45,14 @@ Follow these steps to get the scripts running on your system:
 
 1️⃣ GNOME Online Accounts (GOA) Login
 Open your system Settings and navigate to Online Accounts.
-
 Log in to your Google or Microsoft accounts. The scripts will automatically detect these sessions.
 
 2️⃣ Folder Configuration
 Create a folder named .conky in your Home directory: mkdir -p ~/.conky
-
 Copy mail.py and calendar.py into the ~/.conky/ folder.
 
 3️⃣ Grant Execution Permissions
 You must allow the system to run these scripts as programs. Open your terminal and run:
-
 ```bash
 chmod +x ~/.conky/mail.py
 chmod +x ~/.conky/email-to-password.py
@@ -70,9 +60,7 @@ chmod +x ~/.conky/calendar.py
 ```
 4️⃣ Activation
 Open Conky Manager on your Linux distribution.
-
 Refresh the list of widgets and scripts.
-
 Select the scripts to display them on your desktop.
 
 ---
@@ -102,10 +90,9 @@ To use the Cockpit Module, run:
 ```bash
 sudo apt install -y python3 sqlite3 zenity xclip libnotify-bin gnome-online-accounts-gtk evolution-data-server
 ```
-## 📖 Setup Instructions Contact XFCE
+## 📖 Setup Instructions Contact XFCE (X11)
 1️⃣ GNOME Online Accounts (GOA) Login
 Open your system Settings and navigate to Online Accounts.
-
 Log in to your Google. The scripts will automatically detect these sessions.
 
 2️⃣ Folder Configuration & Permissions
