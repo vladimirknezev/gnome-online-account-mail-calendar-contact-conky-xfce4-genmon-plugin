@@ -108,6 +108,8 @@ Right-click the new icon -> Properties.
 ```bash
 bash -c "~/.script/contact_genmon.sh"
 ```
+* **Period (s):** `3600` (Or set to `0` to trigger ONLY on manual click, preventing unexpected pop-ups).
+
 ## 🚀 Pro-Tip: Whisker Menu Integration (Keyboard Search)
 If you prefer using your keyboard, you can integrate the contact search directly into the XFCE Whisker Menu. This allows you to find and copy contact info in seconds without touching the mouse.
 
@@ -130,7 +132,7 @@ Thanks to the optimized SQL query, you can search by:
 Name: Typing a part of the contact's name.
 Number: Typing a part of the phone number (Reverse Search).
 Label: Uncheck (Hidden).
-* **Period (s):** `3600` (Or set to `0` to trigger ONLY on manual click, preventing unexpected pop-ups).
+
 ## ⚖️ License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
