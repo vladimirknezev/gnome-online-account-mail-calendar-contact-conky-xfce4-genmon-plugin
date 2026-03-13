@@ -100,7 +100,7 @@ This is a standalone interactive module designed specifically for **XFCE Desktop
 ### 📦 Installation (Prerequisites)
 To use the Cockpit Module, run:
 ```bash
-sudo apt install -y python3 sqlite3 zenity xclip libnotify-bin xfce4-genmon-plugin gnome-online-accounts-gtk evolution-data-server
+sudo apt install -y python3 sqlite3 zenity xclip libnotify-bin gnome-online-accounts-gtk evolution-data-server
 ```
 ## 📖 Setup Instructions Contact
 1️⃣ GNOME Online Accounts (GOA) Login
